@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 dbConnectionStatus = "not connected to DB";
 
-dbConnectionString = "mongodb+srv://dbuser:"+process.env.MONGODB_DBPWD+"@boomongocluster-rcqr2.azure.mongodb.net/node-angular?retryWrites=true&w=majority"
+dbConnectionString = "mongodb+srv://"+process.env.MONGODB_DBUSER+":"+process.env.MONGODB_DBPWD+"@boomongocluster-rcqr2.azure.mongodb.net/node-angular?retryWrites=true&w=majority"
 
 mongoose
   .connect(
