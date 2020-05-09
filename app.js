@@ -3,8 +3,8 @@ const app = express();
 const bodyParser = require("body-parser");
 //const UserSchema = require('./users/user-schema');
 
-const signupRouter = require('./signup')
-const usersRouter = require('./users/users')
+///const signupRouter = require('./signup')
+///const usersRouter = require('./users/users')
 
 //this is stored in nodemon.json file. To get this effect, start the nodemon again. not restarting.
 const DBPWD = process.env.MONGODB_PWD;
@@ -57,6 +57,6 @@ app.post("/val", (req, res, next) => {
 })
 */
 
-app.use('/signup', signupRouter);
-app.use('/users', usersRouter);
+///app.use('/signup', signupRouter);
+///app.use('/users', usersRouter);
 module.exports = app; //exporting the app
