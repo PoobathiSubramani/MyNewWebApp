@@ -20,7 +20,7 @@ mongoose
     });
 
 myapp.get("", (req, res) => {
-    res.send({Message:"Server initialized and " + dbConnectionStatus});
+    res.send({Message:"Server initialized and... " + dbConnectionStatus});
 })
 
 module.exports=myapp;
