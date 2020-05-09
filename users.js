@@ -1,7 +1,7 @@
 const express = require("express");
 const usersRouter = express.Router();
 //const userSchema = require('./user-schema')
-const signupSchema = require('./signup-schemasignup-schema');
+const signupSchema = require('./signup-schema');
 const url = require("url");
 
 usersRouter.get('',(req, res, next) => {
