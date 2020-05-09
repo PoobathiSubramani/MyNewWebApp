@@ -1,10 +1,8 @@
 const express = require("express");
 const myapp = express();
+const mongoose = require("mongoose");
 
 const dbConnectionStatus = "not connected to DB";
-
-
-const mongoose = require("mongoose");
 
 dbConnectionString = "mongodb+srv://dbuser:dbpwd09@boomongocluster-rcqr2.azure.mongodb.net/node-angular?retryWrites=true&w=majority"
 
@@ -16,7 +14,9 @@ mongoose
     {useNewUrlParser: true, useUnifiedTopology: true} //added as per deprication warnings
   )
   .then(() => console.log('Connection to db successful'))
-  .catch((err) => console.error(err));
+  .catch((err) => {
+    console.error("something error..." ,err);
+  });
 
 myapp.get("", (req, res) => {
     res.send({Message:"Server initialized and... " + dbConnectionStatus});
