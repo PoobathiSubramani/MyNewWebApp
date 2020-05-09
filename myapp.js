@@ -4,12 +4,12 @@ const mongoose = require("mongoose");
 
 dbConnectionStatus = "not connected to DB";
 
-dbConnectionString = "mongodb+srv://"+process.env.MONGODB_DBUSER+":"+process.env.MONGODB_DBPWD+"@boomongocluster-rcqr2.azure.mongodb.net/node-angular?retryWrites=true&w=majority"
+dbConnectionString = "mongodb+srv://"+
+process.env.MONGODB_DBUSER+":"+
+process.env.MONGODB_DBPWD+"@boomongocluster-rcqr2.azure.mongodb.net/node-angular?retryWrites=true&w=majority"
 
 mongoose
   .connect(
-    //"mongodb+srv://" + process.env.MONGODB_DBUSER + ":" + process.env.MONGODB_DBPWD + "@" + process.env.MONGODB_CLUSTER + "/" + process.env.MONGODB_DBNAME + "?retryWrites=true&w=majority",
-    //{useNewUrlParser: true, useUnifiedTopology: true} //added as per deprication warnings
     dbConnectionString,
     {useNewUrlParser: true, useUnifiedTopology: true} //added as per deprication warnings
   )
