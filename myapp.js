@@ -30,5 +30,5 @@ myapp.get("", (req, res) => {
 })
 
 
-app.use("/user", userRoutes);
+myapp.use("/user", userRoutes);
 module.exports=myapp;
