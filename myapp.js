@@ -1,6 +1,8 @@
 const express = require("express");
 const myapp = express();
 
+const dbConnectionStatus = "not connected";
+
 
 const mongoose = require("mongoose");
 mongoose
@@ -10,6 +12,7 @@ mongoose
   )
   .then(() => {
     console.log("Connected to database!");
+    dbConnectionStatus = "DB connected"
   })
   .catch(() => {
     console.log("DB Connection failed!");
@@ -17,7 +20,7 @@ mongoose
 
 
 myapp.get("", (req, res) => {
-    res.send({Message:"Hai...how are you?" + process.env.MONGODB_CLUSTER});
+    res.send({Message:"Server initialized and " + dbConnectionStatus});
 })
 
 module.exports=myapp;
