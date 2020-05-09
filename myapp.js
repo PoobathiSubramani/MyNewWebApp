@@ -13,11 +13,14 @@ mongoose
     //"mongodb+srv://" + process.env.MONGODB_DBUSER + ":" + process.env.MONGODB_DBPWD + "@" + process.env.MONGODB_CLUSTER + "/" + process.env.MONGODB_DBNAME + "?retryWrites=true&w=majority",
     //{useNewUrlParser: true, useUnifiedTopology: true} //added as per deprication warnings
     dbConnectionString,
+    {useNewUrlParser: true, useUnifiedTopology: true} //added as per deprication warnings
   )
-    .catch(err => {
-        handleError(err)
-        console.log(err);
-    });
+  try{
+    await mongoose.connect(dbConnectionString, { useNewUrlParser: true, useUnifiedTopology: true });
+  } 
+  catch (error) {
+    handleError(error);
+  }
 
 myapp.get("", (req, res) => {
     res.send({Message:"Server initialized and... " + dbConnectionStatus});
