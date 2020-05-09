@@ -15,12 +15,8 @@ mongoose
     dbConnectionString,
     {useNewUrlParser: true, useUnifiedTopology: true} //added as per deprication warnings
   )
-  try{
-    await mongoose.connect(dbConnectionString, { useNewUrlParser: true, useUnifiedTopology: true });
-  } 
-  catch (error) {
-    handleError(error);
-  }
+  .then(() => console.log('Connection to db successful'))
+  .catch((err) => console.error(err));
 
 myapp.get("", (req, res) => {
     res.send({Message:"Server initialized and... " + dbConnectionStatus});
