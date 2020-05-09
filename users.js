@@ -22,7 +22,6 @@ usersRouter.get('',(req, res, next) => {
     }
   });
 })
-
 /*
 usersRouter.delete('/:email', (req, res, next) => {
 
