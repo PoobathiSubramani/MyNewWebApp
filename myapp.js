@@ -1,7 +1,7 @@
 const express = require("express");
 const myapp = express();
 
-const dbConnectionStatus = "not connected";
+const dbConnectionStatus = "not connected to DB";
 
 
 const mongoose = require("mongoose");
