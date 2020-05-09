@@ -1,5 +1,5 @@
 const express = require("express");
-const myapp = express();
+const app = express();
 const mongoose = require("mongoose");
 const userRoutes = require("./users")
 
@@ -25,10 +25,10 @@ mongoose
     console.error("something error..." ,err);
   });
 
-myapp.get("", (req, res) => {
+  app.get("", (req, res) => {
     res.send({Message:"Server initialized and... " + dbConnectionStatus});
 })
 
 
-myapp.use("/user", userRoutes);
-module.exports=myapp;
+app.use("/user", userRoutes);
+module.exports=app;
