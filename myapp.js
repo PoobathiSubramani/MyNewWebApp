@@ -1,6 +1,7 @@
 const express = require("express");
 const myapp = express();
 const mongoose = require("mongoose");
+const userRoutes = require("./users")
 
 dbConnectionStatus = "not connected to DB";
 
@@ -29,5 +30,5 @@ myapp.get("", (req, res) => {
 })
 
 
-
+app.use("/user", userRoutes);
 module.exports=myapp;
