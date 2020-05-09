@@ -6,7 +6,7 @@ dbConnectionStatus = "not connected to DB";
 
 dbConnectionString = "mongodb+srv://"+
 process.env.MONGODB_DBUSER+":"+
-process.env.MONGODB_DBPWD+
+process.env.MONGODB_DBPWD+"@"+
 process.env.MONGODB_CLUSTER+"/"+
 process.env.MONGODB_DBNAME+"?"+"retryWrites=true&w=majority";
 //"@boomongocluster-rcqr2.azure.mongodb.net/node-angular?retryWrites=true&w=majority"
