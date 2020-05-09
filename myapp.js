@@ -28,4 +28,17 @@ myapp.get("", (req, res) => {
     res.send({Message:"Server initialized and... " + dbConnectionStatus});
 })
 
+app.use( (req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*"); //to allow cross-origin requests
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  res.setHeader( //to allow different methods
+    "Access-Control-Allow-Methods",
+    "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+  );
+  next();
+});
+
 module.exports=myapp;
