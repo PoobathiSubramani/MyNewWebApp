@@ -13,7 +13,6 @@ usersRouter.get('',(req, res, next) => {
       if (docs.length===0) {
         console.log('No users found');
         res.status(200).json({message:"No Users found", users: null})
-        //res.write({message: "no users found"});
       } else {
         console.log('response from backend: ', docs);
         res.status(200).json({message: "Users Found", users: docs});
@@ -21,14 +20,4 @@ usersRouter.get('',(req, res, next) => {
     }
   });
 })
-/*
-usersRouter.delete('/:email', (req, res, next) => {
-
-  console.log("id for deletion: ",req.params.userid);
-  signupSchema.deleteOne({email: req.params.email})
-    .then((dbres) => {
-      res.status(200).json({message: "deletion successful"});
-    });
-})
-*/
 module.exports = usersRouter;
